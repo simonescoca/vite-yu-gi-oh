@@ -1,6 +1,8 @@
 <template>
-    <MainSelect />
-    <MainCards :ObjArrayYuGiOh="YuGiOhObj"/>
+    <main class="background">
+        <MainSelect :ObjArrayYuGiOh="YuGiOhObj"/>
+        <MainCards :ObjArrayYuGiOh="YuGiOhObj"/>
+    </main>
 </template>
 
 <script>
@@ -42,4 +44,9 @@
 <style lang="scss" scoped>
     @use "../styles/variables.scss";
     @use "../styles/mixins.scss";
+
+    .background {
+        background-color: #d48f38;
+        padding: .5rem 0 5rem;
+    }
 </style>
