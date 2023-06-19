@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card mb-5">
         <img :src="ObjArrayYuGiOh[index].card_images[0].image_url"
         class="card-img-top"
         :alt="'image of ' + ObjArrayYuGiOh[index].name + ' card'">
@@ -7,12 +7,17 @@
             <h5 class="card-title">
                 {{ ObjArrayYuGiOh[index].name }}
             </h5>
-            <p class="card-text">
+            <p v-if="ObjArrayYuGiOh[index].archetype" class="card-text">
                 {{ ObjArrayYuGiOh[index].archetype }}
             </p>
-            <a href="#" class="btn btn-primary">
-                Go somewhere
-            </a>
+            <p v-else>
+                -
+            </p>
+            <div class="my_btn-container">
+                <a href="#" class="btn btn-outline-warning">
+                    Go somewhere
+                </a>
+            </div>
         </div>
     </div>
 </template>
@@ -46,5 +51,15 @@
 
     .card {
         width: 18rem;
+    }
+
+    .card-body {
+        position: relative;
+    }
+
+    .my_btn-container {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
     }
 </style>
