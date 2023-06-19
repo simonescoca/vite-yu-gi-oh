@@ -6,7 +6,7 @@
 <script>
     // # Descrizione:
     // Create un nuovo progetto utilizzando Vite e Vue 3 e definite i componenti necessari per strutturare il layout come da screenshot allegato.
-    // Al caricamento della pagina, effettuate una chiama ajax all'API di Yu Gi Oh:
+    // Al caricamento della pagina, effettuate una chiamata ajax all'API di Yu Gi Oh:
     // * https://db.ygoprodeck.com/api/v7/cardinfo.php
     // e con i dati restituiti, stampate una card per ogni carta.
     // ! ATTENZIONE: l’api restituisce tutti i risultati in un colpo solo.
@@ -19,12 +19,11 @@
 
     import AppHeader from "./components/AppHeader.vue";
     import AppMain from "./components/AppMain.vue";
-    import {store} from "./store.js";
 
     export default {
         data() {
             return {
-                store,
+
             }
         },
 
@@ -44,5 +43,6 @@
 </script>
 
 <style lang="scss">
+    @import "bootstrap/scss/bootstrap";
     @import "./styles/general.scss";
 </style>
