@@ -1,5 +1,7 @@
 <template>
-    <SingleCard v-for="(card, i) in ObjArrayYuGiOh" :ObjArrayYuGiOh="ObjArrayYuGiOh" :index="i" />
+    <div class="container d-flex flex-wrap justify-content-between">
+        <SingleCard v-for="(card, i) in ObjArrayYuGiOh" :ObjArrayYuGiOh="ObjArrayYuGiOh" :index="i" />
+    </div>
 </template>
 
 <script>
@@ -21,7 +23,7 @@
         },
 
         created () {
-            console.log(this.ObjArrayYuGiOh)
+
         },
 
         methods: {
