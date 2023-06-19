@@ -1,14 +1,14 @@
 <template>
-    <SingleCard />
+    <SingleCard v-for="(card, i) in ObjArrayYuGiOh" :ObjArrayYuGiOh="ObjArrayYuGiOh" :index="i" />
 </template>
 
 <script>
     import SingleCard from './SingleCard.vue';
-    
+
     export default {
         data() {
             return {
-                
+
             }
         },
 
@@ -17,12 +17,16 @@
         },
 
         props: {
-
+            ObjArrayYuGiOh: Array
         },
 
         created () {
+            console.log(this.ObjArrayYuGiOh)
+        },
 
-        }
+        methods: {
+
+        },
     }
 </script>
 
