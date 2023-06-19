@@ -2,8 +2,7 @@
 
 import {reactive} from 'vue';
 export const store = reactive ({
-    searchtext: "",
-    loading: true
+    linkAPI: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0",
 })
 
 // ? Per importare lo store in un qualsiasi file.vue, fai:
