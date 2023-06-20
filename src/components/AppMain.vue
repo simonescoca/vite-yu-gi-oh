@@ -1,6 +1,6 @@
 <template>
     <main class="background">
-        <MainSelect :ObjArrayYuGiOh="YuGiOhObj"/>
+        <MainSelect :ObjArrayYuGiOh="YuGiOhObj" @radioWaves="filterPerArchetype"/>
         <MainCards :ObjArrayYuGiOh="YuGiOhObj"/>
     </main>
 </template>
@@ -37,7 +37,23 @@
                 // handle error
                 console.log(error);
             })
-        }
+        },
+
+        methods: {
+            filterPerArchetype (archetype) {
+                console.log(archetype)
+                this.YuGiOhObj = []
+                axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${archetype}`)
+                .then((response) => {
+                    // handle success
+                    response.data.data.forEach((item) => {
+                        if (item.archetype === archetype) {
+                            this.YuGiOhObj.push(item)
+                        }
+                    })
+                })
+            }
+        },
     }
 </script>
 
